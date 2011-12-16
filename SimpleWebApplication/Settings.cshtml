@@ -7,6 +7,9 @@
 </head>
 <body>
     <div>
+        <h2>App root</h2>
+        @HttpRuntime.AppDomainAppPath
+
         <h2>AppSettings</h2>
         <ul>
         @foreach (string name in ConfigurationManager.AppSettings)
