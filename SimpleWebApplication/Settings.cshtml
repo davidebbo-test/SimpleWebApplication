@@ -1,6 +1,22 @@
 ﻿@using System.Configuration;
 @using System.Collections;
 
+@functions {
+string GetLocalIP() {
+    IPHostEntry host;
+    string localIP = "?";
+    host = Dns.GetHostEntry(Dns.GetHostName());
+    foreach (IPAddress ip in host.AddressList)
+    {
+        if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+        {
+            localIP = ip.ToString();
+        }
+    }
+    return localIP;
+}
+}
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -9,6 +25,9 @@
     <div>
         <h2>App root</h2>
         @HttpRuntime.AppDomainAppPath
+
+        <h2>Local IP</h2>
+        @GetLocalIP()
 
         <h2>AppSettings</h2>
         <ul>
