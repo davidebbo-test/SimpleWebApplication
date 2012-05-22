@@ -23,11 +23,13 @@ string GetLocalIP() {
 </head>
 <body>
     <div>
-        <h2>App root</h2>
-        @HttpRuntime.AppDomainAppPath
+        <h2>Misc settings</h2>
 
-        <h2>Local IP</h2>
-        @GetLocalIP()
+        <ul>
+            <li>App root = @HttpRuntime.AppDomainAppPath</li>
+            <li>Local IP = @GetLocalIP()</li>
+            <li>Request.Url = @Request.Url</li>
+        </ul>
 
         <h2>AppSettings</h2>
         <ul>
