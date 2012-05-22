@@ -60,6 +60,14 @@ string GetLocalIP() {
             <li>@entry.Key=@entry.Value</li>
         }
         </ul>
+
+        <h2>HTTP headers</h2>
+        <ul>
+        @foreach (string name in Request.Headers)
+        {
+            <li>@name=@Request.Headers[name]</li>
+        }
+        </ul>
     </div>
 </body>
 </html>
