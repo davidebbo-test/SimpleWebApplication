@@ -26,6 +26,8 @@ string GetLocalIP() {
         <h2>Misc settings</h2>
 
         <ul>
+            <li>Machine name: @System.Environment.MachineName</li>
+            <li>Process ID: @System.Diagnostics.Process.GetCurrentProcess().Id</li>
             <li>App root = @HttpRuntime.AppDomainAppPath</li>
             <li>Local IP = @GetLocalIP()</li>
             <li>Request.Url = @Request.Url</li>
